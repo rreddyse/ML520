@@ -21,10 +21,18 @@ async function runExample() {
 
   let session = new onnx.InferenceSession();
 
-  await session.loadModel("./Net_ChurnData.onnx");
+  await session.loadModel("Net_ChurnData.onnx");
   let outputMap = await session.run([tensorX]);
   let outputData = outputMap.get('output1');
 
   let predictions = document.getElementById('predictions');
-  predictions.innerHTML = `<hr> Predicted churn status: ${outputData.data[0].toFixed(2)}`;
+  predictions.innerHTML = ` <hr> Got an output tensor with value: <br />
+  <table>
+      <tr>
+          <td>Customer exited or not</td>
+          <td id="td0"> ${outputData.data[0].toFixed(2)} </td>
+
+      </tr>
+  </table
+  `;
 }
