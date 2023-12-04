@@ -34,7 +34,7 @@ async function runExample() {
   <table>
       <tr>
           <td>Customer exited or not</td>
-          <td id="td0"> ${outputData.data[0].toFixed(2)} </td>
+          <td id="td0"> ${outputData.data[0]} </td>
 
       </tr>
   </table
