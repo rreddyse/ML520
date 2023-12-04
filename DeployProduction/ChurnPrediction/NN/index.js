@@ -34,7 +34,7 @@ async function runExample() {
   <table>
       <tr>
           <td>Customer exited or not</td>
-          <td id="td0"> ${outputData.data[0]} </td>
+          <td id="td0"> ${outputData.data[0].int} </td>
 
       </tr>
   </table
