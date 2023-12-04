@@ -32,13 +32,12 @@ let outputData = outputMap.get('output1');
 // Round the output value to the nearest integer
 let roundedOutput = Math.round(outputData.data[0]);
 
+
 let predictions = document.getElementById('predictions');
-predictions.innerHTML = ` <hr> Got an output tensor with value: <br />
-  <table>
-      <tr>
-          <td>Customer exited or not</td>
-          <td id="td0"> ${roundedOutput} </td>
-      </tr>
-  </table>
-  `;
+ if (roundedOutput === 0) {
+  predictions.innerHTML = ` <hr> Customer not exited`;
+ } else {
+  predictions.innerHTML = ` <hr> Customer exited`;
+ }
+ 
 }
