@@ -27,7 +27,7 @@ let session = new onnx.InferenceSession();
 
 await session.loadModel("Net_ChurnData1.onnx");
 let outputMap = await session.run([tensorX]);
-let outputData = outputMap.get('output1');
+let outputData = outputMap.get('output');
 
 // Round the output value to the nearest integer
 let roundedOutput = Math.round(outputData.data[0]);
