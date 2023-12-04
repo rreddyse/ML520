@@ -16,13 +16,16 @@ async function runExample() {
   x[11] =document.getElementById('box12').value;
   x[12] =document.getElementById('box13').value;
   x[13] =document.getElementById('box14').value;
-  
+  x[14] =document.getElementById('box15').value;
+  x[15] =document.getElementById('box16').value;
+  x[16] =document.getElementById('box17').value;
 
-  let tensorX = new onnx.Tensor(x, 'float32', [1, 14]);
+
+  let tensorX = new onnx.Tensor(x, 'float32', [1, 17]);
 
   let session = new onnx.InferenceSession();
 
-  await session.loadModel("Net_ChurnData.onnx");
+  await session.loadModel("NN_Net_ChurnData.onnx");
   let outputMap = await session.run([tensorX]);
   let outputData = outputMap.get('output1');
 
