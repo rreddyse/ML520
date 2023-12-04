@@ -30,7 +30,7 @@ async function runExample() {
 
   // Round the output value to the nearest integer
   let roundedOutput = Math.round(outputData.data[0]);
-
+  console.log('Model exported to ONNX:', onnxPath);
   // Display predictions on the web page
   let predictions = document.getElementById('predictions');
   predictions.innerHTML = `
