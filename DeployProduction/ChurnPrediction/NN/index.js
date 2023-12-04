@@ -25,7 +25,7 @@ async function runExample() {
 
 let session = new onnx.InferenceSession();
 
-await session.loadModel("churn_prediction.onnx");
+await session.loadModel("Net_ChurnData1.onnx");
 let outputMap = await session.run([tensorX]);
 let outputData = outputMap.get('output1');
 
