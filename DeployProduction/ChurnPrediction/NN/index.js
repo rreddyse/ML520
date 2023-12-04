@@ -15,7 +15,7 @@ async function runExample() {
   let outputData = outputMap.values().next().value;
 
   // Round the output value to the nearest integer
-  let roundedOutput = Math.round(outputData.data[0]);
+  let roundedOutput = (outputData.data[0]);
 
   // Display predictions on the web page
   let predictions = document.getElementById('predictions');
