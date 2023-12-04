@@ -23,20 +23,22 @@ async function runExample() {
 
   let tensorX = new onnx.Tensor(x, 'float32', [1, 17]);
 
-  let session = new onnx.InferenceSession();
+let session = new onnx.InferenceSession();
 
-  await session.loadModel("NN_Net_ChurnData.onnx");
-  let outputMap = await session.run([tensorX]);
-  let outputData = outputMap.get('output1');
+await session.loadModel("NN_Net_ChurnData.onnx");
+let outputMap = await session.run([tensorX]);
+let outputData = outputMap.get('output1');
 
-  let predictions = document.getElementById('predictions');
-  predictions.innerHTML = ` <hr> Got an output tensor with value: <br />
+// Round the output value to the nearest integer
+let roundedOutput = Math.round(outputData.data[0]);
+
+let predictions = document.getElementById('predictions');
+predictions.innerHTML = ` <hr> Got an output tensor with value: <br />
   <table>
       <tr>
           <td>Customer exited or not</td>
-          <td id="td0"> ${outputData.data[0].int} </td>
-
+          <td id="td0"> ${roundedOutput} </td>
       </tr>
-  </table
-  `;
+  </table>`
+ ;
 }
