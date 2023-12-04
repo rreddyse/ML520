@@ -39,6 +39,6 @@ predictions.innerHTML = ` <hr> Got an output tensor with value: <br />
           <td>Customer exited or not</td>
           <td id="td0"> ${roundedOutput} </td>
       </tr>
-  </table>`
- ;
+  </table>
+  `;
 }
