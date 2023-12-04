@@ -1,4 +1,3 @@
-
 async function runExample() {
   // Retrieve user inputs from HTML input fields
   var x = [];
@@ -16,7 +15,7 @@ async function runExample() {
   let outputData = outputMap.values().next().value;
 
   // Round the output value to the nearest integer
-  let roundedOutput = Math.round(outputData.data[0][0]); // Extract the first element and round
+  let roundedOutput = Math.round(outputData.data[0]);
 
   // Display predictions on the web page
   let predictions = document.getElementById('predictions');
@@ -30,4 +29,3 @@ async function runExample() {
     </table>
   `;
 }
-
